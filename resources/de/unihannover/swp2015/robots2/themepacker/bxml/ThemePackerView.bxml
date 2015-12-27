@@ -1,0 +1,58 @@
+<windows:ThemePackerView title="Theme Packer"
+	maximized="true" xmlns:bxml="http://pivot.apache.org/bxml"
+	xmlns:content="org.apache.pivot.wtk.content" xmlns:effects="org.apache.pivot.wtk.effects"
+	xmlns:windows="de.unihannover.swp2015.robots2.themepacker.window"
+	xmlns="org.apache.pivot.wtk">
+	<SplitPane splitRatio="0.9" orientation="vertical" locked="true">
+		<top>
+		    <TablePane>
+		    	<columns>
+		            <TablePane.Column width="1*"/>
+	        	</columns>
+	        	
+	        	<TablePane.Row height="30">
+					<TextInput bxml:id="file23" prompt="SrcDirectory" preferredHeight="30" />
+				</TablePane.Row>
+				
+				<TablePane.Row height="-1">
+					<FlowPane styles="{padding:5}">
+		
+						<TextInput bxml:id="file0" prompt="BubbleBackgroundTexture" />
+						<TextInput bxml:id="file1" prompt="ZeroWayField" />
+						<TextInput bxml:id="file2" prompt="OneWayField" />
+		
+						<TextInput bxml:id="file3" prompt="CurveField" />
+						<TextInput bxml:id="file4" prompt="TwoWayField" />
+						<TextInput bxml:id="file5" prompt="ThreeWayField" />
+		
+						<TextInput bxml:id="file6" prompt="FourWayField" />
+						<TextInput bxml:id="file7" prompt="ResOne" />
+						<TextInput bxml:id="file8" prompt="ResTwo" />
+		
+						<TextInput bxml:id="file9" prompt="ResThree" />
+						<TextInput bxml:id="file10" prompt="ResFour" />
+						<TextInput bxml:id="file11" prompt="ResFive" />
+		
+						<TextInput bxml:id="file12" prompt="ResSix" />
+						<TextInput bxml:id="file13" prompt="ResSeven" />
+						<TextInput bxml:id="file14" prompt="ResEight" />
+		
+						<TextInput bxml:id="file15" prompt="ResNine" />
+						<TextInput bxml:id="file16" prompt="ResTen" />
+						<TextInput bxml:id="file17" prompt="Robot" />
+		
+						<TextInput bxml:id="file18" prompt="StartPosTexture" />
+						<TextInput bxml:id="file19" prompt="WallNorth" />
+						<TextInput bxml:id="file20" prompt="WallSouth" />
+		
+						<TextInput bxml:id="file21" prompt="WallWest" />
+						<TextInput bxml:id="file22" prompt="WallEast" />
+					</FlowPane>
+				</TablePane.Row>
+			</TablePane>
+		</top>
+		<bottom>
+			<PushButton bxml:id="pushButton" buttonData="Packen" />
+		</bottom>
+	</SplitPane>
+</windows:ThemePackerView>
