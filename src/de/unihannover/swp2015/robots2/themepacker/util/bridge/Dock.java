@@ -1,23 +1,42 @@
 package de.unihannover.swp2015.robots2.themepacker.util.bridge;
 
+/**
+ * Provides a strict implementation of {@link BridgeEndpoint}. 
+ * 
+ * @author Rico Schrage
+ */
 public abstract class Dock implements BridgeEndpoint {
 	
+	/**
+	 * The connected bridge. Can be null.
+	 */
 	protected Bridge bridge;
 	
+	/**
+	 * @return true if the dock is connected
+	 */
 	public boolean isConnected() {
 		return bridge != null;
 	}
 	
-	@Override
-	public void connectBridge(Bridge bridge) {
+	/**
+	 * Connects the end-point to the give bridge.
+	 * 
+	 * @param bridge {@link Bridge}
+	 */
+	public void connectBridge(final Bridge bridge) {
 		if (isConnected()) {
 			throw new IllegalStateException("The dock is already connected!");
 		}
 		
 		this.bridge = bridge;
 	}
-
-	@Override
+	
+	/**
+	 * Disconnects the end-point to the given bridge.
+	 * 
+	 * @param bridge {@link Bridge}
+	 */
 	public void disconnectBridge(Bridge bridge) {
 		if (bridge != this.bridge) {
 			throw new IllegalArgumentException("The given bridge is not conencted to this dock!");
@@ -36,6 +55,11 @@ public abstract class Dock implements BridgeEndpoint {
 		// optional as alternative to the reflection system
 	}
 	
+	/**
+	 * Dock made for controller. When connecting this class to a bridge, it will be registered as controller.
+	 * 
+	 * @author Rico Schrage
+	 */
 	public static abstract class Controller extends Dock implements BridgeEndpoint.Controller {
 		
 		@Override
@@ -54,6 +78,11 @@ public abstract class Dock implements BridgeEndpoint {
 		
 	}	
 	
+	/**
+	 * Dock made for view-controller. When connecting this class to a bridge, it will be registered as view-controller.
+	 * 
+	 * @author Rico Schrage
+	 */
 	public static abstract class ViewController extends Dock implements BridgeEndpoint.ViewController {
 		
 		@Override
@@ -72,6 +101,11 @@ public abstract class Dock implements BridgeEndpoint {
 		
 	}	
 	
+	/**
+	 * Dock made for view's. When connecting this class to a bridge, it will be registered as view.
+	 * 
+	 * @author Rico Schrage
+	 */
 	public static abstract class View extends Dock implements BridgeEndpoint.View {
 		
 		@Override

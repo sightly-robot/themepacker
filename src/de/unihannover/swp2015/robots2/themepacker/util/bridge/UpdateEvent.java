@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Events, which can be emitted to a bridge. They indicate that something has changed.
  * <br>
- * It supports attaching associated objects. 
+ * They support attaching associated objects. 
  * 
  * @author Rico Schrage
  */
@@ -44,7 +44,7 @@ public enum UpdateEvent {
 	
 	/**
 	 * @param type {@link TargetType}
-	 * @return if the target is supported
+	 * @return true, if the target is supported
 	 */
 	public boolean isTarget(final TargetType type) {
 		return targetTypeList.contains(type);

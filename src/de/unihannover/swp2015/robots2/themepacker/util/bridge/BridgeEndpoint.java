@@ -1,7 +1,7 @@
 package de.unihannover.swp2015.robots2.themepacker.util.bridge;
 
 /**
- * Defines a bridge end-point for the classes, which are connected via a bridge.
+ * Defines a bridge end-point for classes, which should get connected via a bridge.
  * 
  * @author Rico Schrage
  */
@@ -26,20 +26,6 @@ public interface BridgeEndpoint {
 	 * @param source object, which caused the event
 	 */
 	public void onAction(ActionEvent event, final Object source);
-	
-	/**
-	 * Connects the end-point to the give bridge.
-	 * 
-	 * @param bridge {@link Bridge}
-	 */
-	public void connectBridge(final Bridge bridge);
-	
-	/**
-	 * Disconnects the end-point to the given bridge.
-	 * 
-	 * @param bridge {@link Bridge}
-	 */
-	public void disconnectBridge(final Bridge bridge);
 
 	/**
 	 * Marker interface to mark a controller bridge end-point.

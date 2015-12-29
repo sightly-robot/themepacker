@@ -14,8 +14,9 @@ import org.apache.pivot.wtk.skin.terra.TerraFrameSkin;
 import de.unihannover.swp2015.robots2.themepacker.controller.ViewActionHandler;
 import de.unihannover.swp2015.robots2.themepacker.controller.PackController;
 import de.unihannover.swp2015.robots2.themepacker.util.bridge.Bridge;
-import de.unihannover.swp2015.robots2.themepacker.util.bridge.BridgeEndpoint.Controller;
-import de.unihannover.swp2015.robots2.themepacker.util.bridge.BridgeEndpoint.View;
+import de.unihannover.swp2015.robots2.themepacker.util.bridge.Dock.Controller;
+import de.unihannover.swp2015.robots2.themepacker.util.bridge.Dock.View;
+import de.unihannover.swp2015.robots2.themepacker.util.bridge.Dock.ViewController;
 import de.unihannover.swp2015.robots2.themepacker.view.ThemePackerView;
 import de.unihannover.swp2015.robots2.themepacker.window.MainFrame;
 
@@ -49,7 +50,7 @@ public class ThemePacker implements Application {
     /**
      * Main view controller of the application.
      */
-    private ViewActionHandler viewController = null;
+    private ViewController viewController = null;
     
     /**
      * Main view of the application.

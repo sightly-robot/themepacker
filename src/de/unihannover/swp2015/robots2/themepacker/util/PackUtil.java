@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import com.badlogic.gdx.tools.texturepacker.TexturePacker;
 import com.badlogic.gdx.tools.texturepacker.TexturePacker.Settings;
@@ -33,11 +34,11 @@ public class PackUtil {
 		
 		try {
 			final Map<String, File> newMap = new HashMap<>();
-			for (final String name : files.keySet()) {
-				final File file = files.get(name);
+			for (final Entry<String, File> entry : files.entrySet()) {
+				final File file = files.get(entry.getKey());
 				final Path newPath = Files.copy(file.toPath(), new File(outDirectory.getAbsolutePath() + File.separator + file.getName()).toPath(), 
 						StandardCopyOption.REPLACE_EXISTING);
-				newMap.put(name, newPath.toFile());
+				newMap.put(entry.getKey(), newPath.toFile());
 			}
 			return newMap;
 		}	
@@ -48,8 +49,8 @@ public class PackUtil {
 	}
 	
 	public static void renameFilesToKey(final Map<String, File> map) throws IOException {
-		for (final String key : map.keySet()) {
-			PackUtil.renameFile(map.get(key), key);
+		for (final Entry<String, File> entry : map.entrySet()) {
+			PackUtil.renameFile(map.get(entry.getKey()), entry.getKey());
 		}
 	}
 	

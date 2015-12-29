@@ -9,10 +9,10 @@ import com.badlogic.gdx.tools.texturepacker.TexturePacker.Settings;
 
 import de.unihannover.swp2015.robots2.themepacker.util.PackUtil;
 import de.unihannover.swp2015.robots2.themepacker.util.bridge.ActionEvent;
+import de.unihannover.swp2015.robots2.themepacker.util.bridge.BridgeActionRoute;
+import de.unihannover.swp2015.robots2.themepacker.util.bridge.BridgeUpdateRoute;
 import de.unihannover.swp2015.robots2.themepacker.util.bridge.Dock;
 import de.unihannover.swp2015.robots2.themepacker.util.bridge.UpdateEvent;
-import de.unihannover.swp2015.robots2.themepacker.util.bridge.annotation.BridgeActionRoute;
-import de.unihannover.swp2015.robots2.themepacker.util.bridge.annotation.BridgeUpdateRoute;
 
 /**
  * Main controller of the application, which is responsible for packing the textures. Furthermore it

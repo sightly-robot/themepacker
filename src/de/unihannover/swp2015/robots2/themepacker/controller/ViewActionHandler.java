@@ -9,10 +9,10 @@ import org.apache.pivot.wtk.SheetCloseListener;
 import org.apache.pivot.wtk.TextInput;
 
 import de.unihannover.swp2015.robots2.themepacker.util.bridge.ActionEvent;
+import de.unihannover.swp2015.robots2.themepacker.util.bridge.BridgeActionRoute;
+import de.unihannover.swp2015.robots2.themepacker.util.bridge.BridgeUpdateRoute;
 import de.unihannover.swp2015.robots2.themepacker.util.bridge.Dock;
 import de.unihannover.swp2015.robots2.themepacker.util.bridge.UpdateEvent;
-import de.unihannover.swp2015.robots2.themepacker.util.bridge.annotation.BridgeActionRoute;
-import de.unihannover.swp2015.robots2.themepacker.util.bridge.annotation.BridgeUpdateRoute;
 
 public class ViewActionHandler extends Dock.ViewController {
 

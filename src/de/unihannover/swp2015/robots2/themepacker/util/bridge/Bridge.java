@@ -5,9 +5,6 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.unihannover.swp2015.robots2.themepacker.util.bridge.annotation.BridgeActionRoute;
-import de.unihannover.swp2015.robots2.themepacker.util.bridge.annotation.BridgeUpdateRoute;
-
 /**
  * Bridge between view and controller. Forwards input actions and update
  * requests.
