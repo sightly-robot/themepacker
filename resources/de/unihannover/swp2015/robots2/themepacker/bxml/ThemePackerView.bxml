@@ -1,58 +1,59 @@
-<windows:ThemePackerView title="Theme Packer"
-	maximized="true" xmlns:bxml="http://pivot.apache.org/bxml"
-	xmlns:content="org.apache.pivot.wtk.content" xmlns:effects="org.apache.pivot.wtk.effects"
-	xmlns:windows="de.unihannover.swp2015.robots2.themepacker.window"
-	xmlns="org.apache.pivot.wtk">
+<windows:MainFrame title="Theme Packer" maximized="true"
+    xmlns:bxml="http://pivot.apache.org/bxml"
+    xmlns:content="org.apache.pivot.wtk.content"
+    xmlns:windows="de.unihannover.swp2015.robots2.themepacker.window"
+    xmlns="org.apache.pivot.wtk">
 	<SplitPane splitRatio="0.9" orientation="vertical" locked="true">
 		<top>
-		    <TablePane>
-		    	<columns>
-		            <TablePane.Column width="1*"/>
-	        	</columns>
-	        	
-	        	<TablePane.Row height="30">
-					<TextInput bxml:id="file23" prompt="SrcDirectory" preferredHeight="30" />
+			<TablePane>
+				<columns>
+					<TablePane.Column width="1*" />
+				</columns>
+
+				<TablePane.Row height="30">
+					<TextInput bxml:id="srcInput" prompt="SrcDirectory"
+						preferredHeight="30" />
 				</TablePane.Row>
-				
+
 				<TablePane.Row height="-1">
 					<FlowPane styles="{padding:5}">
-		
-						<TextInput bxml:id="file0" prompt="BubbleBackgroundTexture" />
-						<TextInput bxml:id="file1" prompt="ZeroWayField" />
-						<TextInput bxml:id="file2" prompt="OneWayField" />
-		
-						<TextInput bxml:id="file3" prompt="CurveField" />
-						<TextInput bxml:id="file4" prompt="TwoWayField" />
-						<TextInput bxml:id="file5" prompt="ThreeWayField" />
-		
-						<TextInput bxml:id="file6" prompt="FourWayField" />
-						<TextInput bxml:id="file7" prompt="ResOne" />
-						<TextInput bxml:id="file8" prompt="ResTwo" />
-		
-						<TextInput bxml:id="file9" prompt="ResThree" />
-						<TextInput bxml:id="file10" prompt="ResFour" />
-						<TextInput bxml:id="file11" prompt="ResFive" />
-		
-						<TextInput bxml:id="file12" prompt="ResSix" />
-						<TextInput bxml:id="file13" prompt="ResSeven" />
-						<TextInput bxml:id="file14" prompt="ResEight" />
-		
-						<TextInput bxml:id="file15" prompt="ResNine" />
-						<TextInput bxml:id="file16" prompt="ResTen" />
-						<TextInput bxml:id="file17" prompt="Robot" />
-		
-						<TextInput bxml:id="file18" prompt="StartPosTexture" />
-						<TextInput bxml:id="file19" prompt="WallNorth" />
-						<TextInput bxml:id="file20" prompt="WallSouth" />
-		
-						<TextInput bxml:id="file21" prompt="WallWest" />
-						<TextInput bxml:id="file22" prompt="WallEast" />
+
+						<TextInput bxml:id="file0" name="default_bubble" prompt="BubbleBackgroundTexture" />
+						<TextInput bxml:id="file1" name="default_field" prompt="ZeroWayField" />
+						<TextInput bxml:id="file2" name="default_field_one" prompt="OneWayField" />
+
+						<TextInput bxml:id="file3" name="default_2_c" prompt="CurveField" />
+						<TextInput bxml:id="file4" name="default_field_two" prompt="TwoWayField" />
+						<TextInput bxml:id="file5" name="default_field_three" prompt="ThreeWayField" />
+
+						<TextInput bxml:id="file6" name="default_field_four" prompt="FourWayField" />
+						<TextInput bxml:id="file7" name="default_res_one" prompt="ResOne" />
+						<TextInput bxml:id="file8" name="default_res_two" prompt="ResTwo" />
+
+						<TextInput bxml:id="file9" name="default_res_three" prompt="ResThree" />
+						<TextInput bxml:id="file10" name="default_res_four" prompt="ResFour" />
+						<TextInput bxml:id="file11" name="default_res_five" prompt="ResFive" />
+
+						<TextInput bxml:id="file12" name="default_res_six" prompt="ResSix" />
+						<TextInput bxml:id="file13" name="default_res_seven" prompt="ResSeven" />
+						<TextInput bxml:id="file14" name="default_res_eight" prompt="ResEight" />
+
+						<TextInput bxml:id="file15" name="default_res_nine" prompt="ResNine" />
+						<TextInput bxml:id="file16" name="default_res_ten" prompt="ResTen" />
+						<TextInput bxml:id="file17" name="default_robo" prompt="Robot" />
+
+						<TextInput bxml:id="file18" name="default_startpos" prompt="StartPosTexture" />
+						<TextInput bxml:id="file19" name="default_wall_n" prompt="WallNorth" />
+						<TextInput bxml:id="file20" name="default_wall_s" prompt="WallSouth" />
+
+						<TextInput bxml:id="file21" name="default_wall_w" prompt="WallWest" />
+						<TextInput bxml:id="file22" name="default_wall_e" prompt="WallEast" />
 					</FlowPane>
 				</TablePane.Row>
 			</TablePane>
 		</top>
 		<bottom>
-			<PushButton bxml:id="pushButton" buttonData="Packen" />
+			<PushButton bxml:id="startButton" buttonData="Packen" />
 		</bottom>
 	</SplitPane>
-</windows:ThemePackerView>
+</windows:MainFrame>
