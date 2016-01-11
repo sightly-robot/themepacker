@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.badlogic.gdx.tools.texturepacker.TexturePacker.Settings;
 
 import de.unihannover.swp2015.robots2.themepacker.util.PackUtil;
@@ -22,21 +25,21 @@ import de.unihannover.swp2015.robots2.themepacker.util.bridge.UpdateEvent;
  */
 public class PackController extends Dock.Controller {
 	
-	/**
-	 * Source directory, will be deleted after use.
-	 */
+	/** Logger (log4j) */
+	private static final Logger log = LogManager.getLogger();
+	
+	/** Source directory, will be deleted after use. */
 	private static final File DEFAULT_SRC = new File("temp");
 	
-	/**
-	 * Output directory (persistent). 
-	 */
+	/** Output directory (persistent). */
 	private static final File DEFAULT_OUT = new File("output");
 	
-	/**
-	 * Pack settings
-	 */
+	/** Pack settings */
 	private static final Settings DEFAULT_SETTINGS = new Settings();
 	
+	/** maps possible textures to given paths */
+	private final Map<String, File> texKeyToPath;
+
 	/**
 	 * Initializes the pack settings.
 	 */
@@ -45,10 +48,10 @@ public class PackController extends Dock.Controller {
 		DEFAULT_SETTINGS.maxHeight = 1024*4;
 		DEFAULT_SETTINGS.pot = true;
 		DEFAULT_SETTINGS.duplicatePadding = true;	
+		DEFAULT_SETTINGS.paddingX = 4;
+		DEFAULT_SETTINGS.paddingY = 4;
 	}
-		
-	private final Map<String, File> texKeyToPath;
-	
+			
 	/**
 	 * Constructs the pack controller, which is responsible to pack the input files with the TexturePacker.
 	 */
@@ -63,11 +66,12 @@ public class PackController extends Dock.Controller {
 			PackUtil.renameFilesToKey(newMap);
 			PackUtil.packTheme(DEFAULT_SRC, DEFAULT_OUT, "test", DEFAULT_SETTINGS);
 			if (!DEFAULT_SRC.delete()) {
-				System.out.println("Deletion of the temporary folder failed!");
+				log.error("Deletion of the temporary folder failed!");
 			}
 		} 
 		catch (IOException e) {
-			e.printStackTrace();
+			log.error("Moving files failed");
+			log.error(e);
 		}
 	}
 	

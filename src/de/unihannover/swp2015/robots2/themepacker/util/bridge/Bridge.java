@@ -5,6 +5,9 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * Bridge between view and controller. Forwards input actions and update
  * requests.
@@ -13,6 +16,11 @@ import java.util.List;
  */
 public class Bridge {
 
+	/**
+	 * Logger (log4j)
+	 */
+	private static final Logger log = LogManager.getLogger();
+	
 	/**
 	 * Contains all registered {@link Controller}.
 	 */
@@ -146,7 +154,8 @@ public class Bridge {
 					return true;
 				} 
 				catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-					e.printStackTrace();
+					log.error("Method {} has the wrong signature.", method.getName());
+					log.error(e);
 				}
 			}
 		}
@@ -206,7 +215,8 @@ public class Bridge {
 					return true;
 				}
 				catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-					e.printStackTrace();
+					log.error("Method {} has the wrong signature.", method.getName());
+					log.error(e);
 				}
 			}
 		}
