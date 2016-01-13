@@ -1,7 +1,6 @@
 package de.unihannover.swp2015.robots2.themepacker.util.bridge;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Events, which will be thrown by GUI elements (without an update of the model). They indicate, that some actions have to be done.
@@ -34,7 +33,7 @@ public enum ActionEvent {
 	/**
 	 * Supported targets
 	 */
-	private final List<TargetType> targetTypeList;
+	private final ArrayList<TargetType> targetTypeList;
 	
 	/**
 	 * Constructs an ActionEvent.

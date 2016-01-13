@@ -60,7 +60,7 @@ public abstract class Dock implements BridgeEndpoint {
 	 * 
 	 * @author Rico Schrage
 	 */
-	public static abstract class Controller extends Dock implements BridgeEndpoint.Controller {
+	public abstract static class Controller extends Dock implements BridgeEndpoint.Controller {
 		
 		@Override
 		public void connectBridge(Bridge bridge) { 
@@ -83,7 +83,7 @@ public abstract class Dock implements BridgeEndpoint {
 	 * 
 	 * @author Rico Schrage
 	 */
-	public static abstract class ViewController extends Dock implements BridgeEndpoint.ViewController {
+	public abstract static class ViewController extends Dock implements BridgeEndpoint.ViewController {
 		
 		@Override
 		public void connectBridge(Bridge bridge) { 
@@ -106,7 +106,7 @@ public abstract class Dock implements BridgeEndpoint {
 	 * 
 	 * @author Rico Schrage
 	 */
-	public static abstract class View extends Dock implements BridgeEndpoint.View {
+	public abstract static class View extends Dock implements BridgeEndpoint.View {
 		
 		@Override
 		public void connectBridge(Bridge bridge) { 

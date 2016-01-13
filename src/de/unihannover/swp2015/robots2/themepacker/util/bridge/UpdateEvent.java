@@ -1,7 +1,6 @@
 package de.unihannover.swp2015.robots2.themepacker.util.bridge;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Events, which can be emitted to a bridge. They indicate that something has changed.
@@ -29,7 +28,7 @@ public enum UpdateEvent {
 	/**
 	 * List of the targets which are supported.
 	 */
-	private final List<TargetType> targetTypeList;
+	private final ArrayList<TargetType> targetTypeList;
 	
 	/**
 	 * @param types supported targets
