@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.badlogic.gdx.tools.texturepacker.TexturePacker.Settings;
 
+import de.unihannover.swp2015.robots2.themepacker.util.FileUtil;
 import de.unihannover.swp2015.robots2.themepacker.util.PackUtil;
 import de.unihannover.swp2015.robots2.themepacker.util.bridge.ActionEvent;
 import de.unihannover.swp2015.robots2.themepacker.util.bridge.BridgeActionRoute;
@@ -62,11 +63,11 @@ public class PackController extends Dock.Controller {
 	@BridgeActionRoute(ActionEvent.PACK_INVOKED)
 	public void onStartPacking(final Object source) {
 		try {
-			final Map<String, File> newMap = PackUtil.moveFiles(texKeyToPath, DEFAULT_SRC);
-			PackUtil.renameFilesToKey(newMap);
+			final Map<String, File> newMap = FileUtil.moveFiles(texKeyToPath, DEFAULT_SRC);
+			FileUtil.renameFilesToKey(newMap);
 			PackUtil.packTheme(DEFAULT_SRC, DEFAULT_OUT, "test", DEFAULT_SETTINGS);
-			if (!DEFAULT_SRC.delete()) {
-				log.error("Deletion of the temporary folder failed!");
+			if (!FileUtil.deleteDirectory(DEFAULT_SRC)) {
+				log.error("Deletion of the temporary folder: {} failed!", DEFAULT_SRC.getAbsolutePath());
 			}
 		} 
 		catch (IOException e) {

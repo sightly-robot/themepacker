@@ -41,13 +41,14 @@
 						<TextInput bxml:id="file15" name="default_res_nine" prompt="ResNine" />
 						<TextInput bxml:id="file16" name="default_res_ten" prompt="ResTen" />
 						<TextInput bxml:id="file17" name="default_robo" prompt="Robot" />
+						<TextInput bxml:id="file18" name="default_virtual_robo" prompt="Virtual Robot" />
 
-						<TextInput bxml:id="file18" name="default_startpos" prompt="StartPosTexture" />
-						<TextInput bxml:id="file19" name="default_wall_n" prompt="WallNorth" />
-						<TextInput bxml:id="file20" name="default_wall_s" prompt="WallSouth" />
-
-						<TextInput bxml:id="file21" name="default_wall_w" prompt="WallWest" />
-						<TextInput bxml:id="file22" name="default_wall_e" prompt="WallEast" />
+						<TextInput bxml:id="file19" name="default_startpos" prompt="StartPosTexture" />
+						<TextInput bxml:id="file20" name="default_wall" prompt="WallNorth" />
+						<TextInput bxml:id="file21" name="default_connection" prompt="Connection lost icon" />
+						<TextInput bxml:id="file22" name="default_warning" prompt="Warning icon" />
+						<TextInput bxml:id="file23" name="default_oneway" prompt="Oneway wall" />
+						<TextInput bxml:id="file24" name="default-rect" prompt="Ranking background" />
 					</FlowPane>
 				</TablePane.Row>
 			</TablePane>
