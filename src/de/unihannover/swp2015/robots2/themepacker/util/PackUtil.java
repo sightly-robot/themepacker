@@ -38,7 +38,9 @@ public class PackUtil {
 			throw new IOException("Creating the directory " + target.toString() + " failed!");
 		}
 		LOGGER.info("Start packing: src {}, target {}, themeName {}", src.getAbsolutePath(), target.getAbsolutePath(), themeName);
+		PrintUtil.disableSystemOut();
 		TexturePacker.process(settings, src.getAbsolutePath(), target.getAbsolutePath(), themeName);
+		PrintUtil.enableSystemOut();
 		LOGGER.info("Packing succeeded");
 	}
 	
