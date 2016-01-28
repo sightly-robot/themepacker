@@ -14,15 +14,31 @@ import de.unihannover.swp2015.robots2.themepacker.util.bridge.BridgeUpdateRoute;
 import de.unihannover.swp2015.robots2.themepacker.util.bridge.Dock;
 import de.unihannover.swp2015.robots2.themepacker.util.bridge.UpdateEvent;
 
+/**
+ * Handles actions on the view.
+ * 
+ * @author Rico Schrage
+ */
 public class ViewActionHandler extends Dock.ViewController {
 
+	/** Path of the root text input */
 	private String rootPath = null;
 	
+	/**
+	 * Will be called when the root path has changed
+	 * 
+	 * @param newPath new root path
+	 */
 	@BridgeUpdateRoute(UpdateEvent.SRC_CHANGED)
 	public void onSourceChanged(final String newPath) {
 		this.rootPath = newPath;
 	}
 	
+	/**
+	 * Called when a text input (except root input) has been focused.
+	 * 
+	 * @param source text input which has been focused
+	 */
 	@BridgeActionRoute(ActionEvent.FOCUS_TEXT_INPUT)
 	public void onFocusTextInput(final TextInput source) {
 		final FileBrowserSheet fileBrowserSheet = new FileBrowserSheet();
@@ -44,6 +60,11 @@ public class ViewActionHandler extends Dock.ViewController {
 		});
 	}
 	
+	/**
+	 * Called when the root text input has been focused.
+	 * 
+	 * @param source root text input
+	 */
 	@BridgeActionRoute(ActionEvent.FOCUS_SOURCE_INPUT)
 	public void onFocusSourceInput(final TextInput source) {
 		final FileBrowserSheet fileBrowserSheet = new FileBrowserSheet();

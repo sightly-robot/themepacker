@@ -60,6 +60,11 @@ public class PackController extends Dock.Controller {
 		this.texKeyToPath = new HashMap<>();
 	}
 	
+	/**
+	 * Will be called when the pack button has been pressed.
+	 * 
+	 * @param source button which invoked packing
+	 */
 	@BridgeActionRoute(ActionEvent.PACK_INVOKED)
 	public void onStartPacking(final Object source) {
 		try {
@@ -76,6 +81,12 @@ public class PackController extends Dock.Controller {
 		}
 	}
 	
+	/**
+	 * Will be called when a text input has been changed.
+	 * 
+	 * @param name target file name
+	 * @param newPath text input
+	 */
 	@BridgeUpdateRoute(UpdateEvent.FILE_CHANGED)
 	public void onFileChanged(final String name, final String newPath) {
 		this.texKeyToPath.put(name, new File(newPath));

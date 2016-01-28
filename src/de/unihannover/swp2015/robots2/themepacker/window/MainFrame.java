@@ -58,6 +58,9 @@ public class MainFrame extends Frame implements Bindable {
 		return fileInputs.get(index);
 	}
 	
+	/**
+	 * @return number of text inputs inputs
+	 */
 	public int getNumberOfFileInputs() {
 		return fileInputs.size();
 	}

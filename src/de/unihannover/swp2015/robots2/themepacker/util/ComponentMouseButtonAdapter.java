@@ -4,6 +4,11 @@ import org.apache.pivot.wtk.Component;
 import org.apache.pivot.wtk.ComponentMouseButtonListener;
 import org.apache.pivot.wtk.Mouse.Button;
 
+/**
+ * Adapter for {@link ComponentMouseButtonListener}.
+ * 
+ * @author Rico Schrage
+ */
 public class ComponentMouseButtonAdapter implements ComponentMouseButtonListener {
 
 	@Override
